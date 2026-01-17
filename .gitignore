@@ -30,4 +30,4 @@ _minted*
 *.pyg
 
 ## Build artifacts (Optional: remove *.pdf if you want to track it)
-*.pdf
+# *.pdf
