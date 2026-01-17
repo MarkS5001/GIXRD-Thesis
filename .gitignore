@@ -1,15 +1,33 @@
-.aux
-.bst
-.eps
-.bbl
-.blg
-.fdb_latexmk
-.fls
-.idx
-.ilg
-.ind
-.lof
-.log
-.out
-.gz
-.toc
+## Core auxiliary files
+*.aux
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.gz
+*.synctex.gz
+
+## Bibliography files
+*.bbl
+*.blg
+*.bst
+*.run.xml
+*.bcf
+
+## Indexing files
+*.idx
+*.ilg
+*.ind
+*.ist
+
+## Lists and Tables of Content
+*.toc
+*.lof
+*.lot
+
+## PythonTeX / Minted (if you use code highlighting)
+_minted*
+*.pyg
+
+## Build artifacts (Optional: remove *.pdf if you want to track it)
+*.pdf
