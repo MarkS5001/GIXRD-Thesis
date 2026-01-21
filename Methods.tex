@@ -1,1 +1,31 @@
 \chapter{Methods}
+
+    Three different methods for determining relative percentages of the dopant
+     in the substrate are used. The methods are: 1. Take the ratio of the max 
+     peak intensity, 2. Fit the peaks to a Gaussian curve, and find the integrated 
+     area, 3. Perform a summation to find the numerical integral. These methods 
+     are predicated on certain assumptions. The mixture of the probed depth is 
+     uniform, which is a known simplification of how the diffused dopants actually 
+     spread (an analysis to correct this has been tried, but better data is needed 
+     for it to be effective). The intensity of the x-ray is also assumed to have 
+     attenuated by 90\%, and all relevant data comes from that. The last assumption 
+     is that the sample is put in its perferred orientation for the silicon structure 
+     to be alined with the x-ray beam. The index of refration is the same as bulk samples\cite{COLOMBI2007554}.
+    
+    \subsubsection*{Method 1: Ratio}
+
+        With this method the program takes the max intensity of the amorphous hump, and the max intensity of the most intense crystalline peak, and takes the ratio of them. 
+        This ratio is then the relative percentages of the dopant and substrate\cite{pandey_structural_2021}.
+
+    \subsubsection*{Method 2: Curve Fitting}
+
+        This method takes the position and intensity values as the x and y inputs of scipy's curve\_fit function. 
+        It then outputs the best fit for amplitude, mean, standard deviation, and a background value. 
+        The function then gets integrated, and the ratio of the areas are taken.
+
+    \subsubsection*{Method 3: Summation}
+
+        This is an integral method as in method 2, but instead of fitting the data to a curve the data is integrated using discrete methods. 
+        The dx is the same for all points, so it is ignored with the foresight that it will be divided out. 
+        The sum is of all the intensity values for the peak or hump. 
+        A ratio is then taken from these sums.
