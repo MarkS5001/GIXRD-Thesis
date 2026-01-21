@@ -1,1 +1,68 @@
 \chapter{Background}
+
+    Solids can be divided into two broad types: crystalline, and amorphous. 
+    Crystalline solids have repeating structure that is predictable, and is consistent throughout the entire solid. 
+    Amorphous solids have no repeating structures, and have no preferred orientation.
+    
+    X-Ray diffraction (XRD) utilizes x-rays to non-destructively probe the inner atomic layers of materials. 
+    In this work it is used to probe different depths of doped silicon to see dopant levels as a function of depth. 
+    As the x-ray interacts with the sample it will reflect, refract, and diffract. 
+    Diffraction is the process of note, and the only one that will be investigated for this work. 
+
+    When XRD is used on crystalline solids a diffraction pattern will emerge. 
+    The spacing between the atoms acts as the slit size that allows for the diffraction interference pattern, in accordance with Bragg's Law ($2d\sin\theta=n\lambda$). 
+    There also exist different spacings between atoms that are not nearest neighbors. 
+    Each of these different spacings are relegated into planes that act like a diffraction grating, existing for every possible repeating spacing within the atom. 
+    All of these in superposition produce a graph that shows sharp peaks correlating directly to the atomic plane's spacing (shown in figure \ref{fig:pure crystalline XRD scan}).
+    
+% Show picture of crystalline XRD pattern
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\linewidth]{Pictures/crystalline XRD scan.png}
+    \caption{Diffractogram of pure crystalline solid}
+    \label{fig:pure crystalline XRD scan}
+\end{figure}
+
+    Amorphous solids under the x-ray beam behave in a similar manner. 
+    The difference being because every atom is arranged randomly, there are an infinite number of planes with their own spacing. 
+    As shown in figure \ref{fig:pure amorphous XRD scan}, this correlates to a moderately low angle hump (called an amorphous hump) with all spacings that would correlate to higher angled peaks being nonexistent because of deconstructive interference\cite{PARKS2007277,achilles_amorphous_2018,ma18092093}.
+
+% Show picture of amorphous XRD pattern
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\linewidth]{Pictures/amorphous XRD scan.png}
+    \caption{Diffractogram of pure amorphous solid}
+    \label{fig:pure amorphous XRD scan}
+\end{figure}
+
+    The materials analyzed in this work are silicon doped with phosphorous, silicon doped with boron, and pure silicon. 
+    The first two materials will be best thought of as a gradient from pure phosphorous or boron to pure silicon from top to bottom. 
+    Silicon is a crystalline material, while phosphorous and boron are amorphous. 
+    This means that the diffractogram will be a superposition of an amorphous diffractogram on a crystalline diffractogram. 
+    The silicon sample was only used to verify that the amorphous hump was present on the diffractograms.
+
+    The XRD process used to incrementally probe deeper depths is called grazing incidence x-ray diffraction (GIXRD, also called glancing incidence x-ray diffraction). 
+    Using this method the XRD will hold the incident beam at a fixed angle (called omega ($\omega$)), while the diffracted beam side moves from a starting angle to an end angle. 
+    The detector is used in a 0D mode that simply counts all the x-rays that interact with it. 
+    The angle the counts correspond to is the angle the incident beam is added to the current diffracted beam angle all multiplied by 2: $2(\omega+\theta)$. 
+    After the scan finishes a new scan is started with a different incident angle to probe a different depth.
+
+% Picture of GIXRD schematic
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\linewidth]{Pictures/2theta scan diagram.jpg}
+    \caption{Diagram of XRD using GIXRD}
+    \label{fig:GIXRD diagram}
+\end{figure}
+
+    The different incident angles probe different depths due to the different 
+    path lengths they provide the x-rays as they interact with the samples. This 
+    is due to the exponential attenuation of intensity as the beam travels given 
+    by this equation: $I(y)=I_0e^{-\alpha y}$ with $\alpha=2\omega n_I/c$\cite{https://doi.org/10.1002/jps.22202,hecht}. With 
+    the complex index of refraction ($n_I$) strongly dependent on wavelength. 
+    The x-ray source is copper, producing $K_\alpha$, and $K_\beta$ in most 
+    abundance. Since one wavelength provides the most uniformity on the diffractogram, 
+    the incident beam optics include a filter to limit the unnecessary wavelength. 
+    $K_\alpha$ is what is most common, so the $K_\beta$ gets mostly filtered out by a
+     nickel filter. This results in a x-ray beam that has a wavelength of 1.54\AA
+      \space (uniformity in the wavelength is also necessary for Bragg's law).
