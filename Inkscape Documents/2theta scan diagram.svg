@@ -23,9 +23,9 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="mm"
-     inkscape:zoom="2"
-     inkscape:cx="319.75"
-     inkscape:cy="366.75"
+     inkscape:zoom="2.8284271"
+     inkscape:cx="184.73165"
+     inkscape:cy="385.19642"
      inkscape:window-width="1920"
      inkscape:window-height="974"
      inkscape:window-x="-11"
@@ -34,6 +34,13 @@
      inkscape:current-layer="layer1" />
   <defs
      id="defs1">
+    <inkscape:perspective
+       sodipodi:type="inkscape:persp3d"
+       inkscape:vp_x="-68.202084 : 252.31307 : 1"
+       inkscape:vp_y="0 : -388.73688 : 0"
+       inkscape:vp_z="1.238414e-14 : -45.125723 : 0"
+       inkscape:persp3d-origin="114.73674 : 233.07059 : 1"
+       id="perspective18" />
     <rect
        x="359.5"
        y="303"
@@ -131,7 +138,10 @@
        sodipodi:end="0.40491024"
        sodipodi:arc-type="slice"
        d="m -49.404332,-114.07326 a 8.7748594,8.7748594 0 0 1 -0.709555,3.45674 l -8.065305,-3.45674 z"
-       transform="scale(-1)" />
+       transform="scale(-1)"
+       inkscape:export-filename="..\Pictures\2theta scan diagram.svg"
+       inkscape:export-xdpi="8.5521889"
+       inkscape:export-ydpi="8.5521889" />
     <path
        style="opacity:1;fill:none;fill-opacity:1;stroke:#30a63e;stroke-width:1.442;stroke-linecap:butt;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
        id="path8"
