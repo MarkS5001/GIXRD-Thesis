@@ -22,14 +22,30 @@
 
     \subsubsection*{Method 2: Curve Fitting}
 
-        This method takes the position and intensity values as the x and y inputs of scipy's curve\_fit function. 
-        It then outputs the best fit for amplitude, mean, standard deviation, and a background value. 
-        The function then gets integrated, and the ratio of the areas are taken.
+        The amorphous hump, and the crystalline peaks can be approximated by Gaussian curves. 
+        As such, it is possible to fit a curve to the hump, and the desired peak. 
+        With this fit, analytic integration is performed. 
+        The values from the integrations are then taken as a ratio as in the intensity method. 
+        This method also gives a background baseline that can be subtracted out.
+
+        % This method takes the position and intensity values as the x and y inputs of scipy's curve\_fit function. 
+        % It then outputs the best fit for amplitude, mean, standard deviation, and a background value. 
+        % The function then gets integrated, and the ratio of the areas are taken.
 
     \subsubsection*{Method 3: Summation}
 
-        This is an integral method as in method 2, but instead of fitting the data to a curve the data is 
-        integrated using discrete methods. 
-        The dx is the same for all points, so it is ignored with the foresight that it will be divided out. 
-        The sum is of all the intensity values for the peak or hump. 
-        A ratio is then taken from these sums.
+        This method is similar to the curve fitting method, but instead of fitting the hump, and peak to a Gaussian, a numerical integration is performed. 
+        This numerical integration sums up the heights in the region of the relevant area to take their ratio. 
+        As stated, only the heights are summed; This is due to the spacing between all points being identical. 
+        Below is the proof: 
+        $$m=\frac{\sum_{\theta_i}^{\theta_f}y_adx_a}{\sum_{\theta_i}^{\theta_f}y_adx_a+\sum_{\theta_i}^{\theta_f}y_cdx_c}$$
+        $$dx_a=dx_c=Constant$$
+        $$m=\frac{dx_a\sum_{\theta_i}^{\theta_f}y_a}{dx_a\sum_{\theta_i}^{\theta_f}y_a+dx_c\sum_{\theta_i}^{\theta_f}y_c}$$
+        $$m=\frac{dx_a\sum_{\theta_i}^{\theta_f}y_a}{dx_a\left(\sum_{\theta_i}^{\theta_f}y_a+\sum_{\theta_i}^{\theta_f}y_c\right)}$$
+        $$m=\frac{\sum_{\theta_i}^{\theta_f}y_a}{\sum_{\theta_i}^{\theta_f}y_a+\sum_{\theta_i}^{\theta_f}y_c}$$
+
+        % This is an integral method as in method 2, but instead of fitting the data to a curve the data is 
+        % integrated using discrete methods. 
+        % The dx is the same for all points, so it is ignored with the foresight that it will be divided out. 
+        % The sum is of all the intensity values for the peak or hump. 
+        % A ratio is then taken from these sums.
