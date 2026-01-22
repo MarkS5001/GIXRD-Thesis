@@ -1,22 +1,24 @@
 \chapter{Methods}
 
-    Three different methods for determining relative percentages of the dopant
-     in the substrate are used. The methods are: 1. Take the ratio of the max 
-     peak intensity, 2. Fit the peaks to a Gaussian curve, and find the integrated 
-     area, 3. Perform a summation to find the numerical integral. These methods 
-     are predicated on certain assumptions. The mixture of the probed depth is 
-     uniform, which is a known simplification of how the diffused dopants actually 
-     spread (an analysis to correct this has been tried, but better data is needed 
-     for it to be effective). The intensity of the x-ray is also assumed to have 
-     attenuated by 90\%, and all relevant data comes from that. The last assumption 
-     is that the sample is put in its preferred orientation for the silicon structure 
-     to be alined with the x-ray beam. The index of refraction is the same as bulk samples\cite{COLOMBI2007554}.
-    
+    Three different methods for determining relative percentages of the dopant in the substrate are used. 
+    The methods are named: 1. Intensity, 2. Curve Fitting, and 3. Summation. 
+    Before discussing the intricacies of these methods, it is important to first know what shared simplifying assumptions on which they are predicated. 
+    The first of these assumptions is that the mixture of the probed depth is uniform. 
+    Uniformity of the mixture cannot be achieved in the sample due to the diffusion process starting at the top of the sample working its way down. %which is a known simplification of how the diffused dopants actually spread (an analysis to correct this has been tried, but better data is needed for it to be effective). 
+    The next assumption is that the intensity of the x-ray has been attenuated by 90\%. 
+    The thirdly, that the sample is put in its preferred orientation that allows for the silicon structure to be alined with the x-ray beam. 
+    The last assumption is the index of refraction is the same as bulk samples\cite{COLOMBI2007554} as those values will be utilized.
+
     \subsubsection*{Method 1: Intensity}
 
-        With this method the program takes the maximum intensity of the amorphous hump, and the maximum intensity 
-        of the most intense crystalline peak, and takes the ratio of them. 
-        This ratio is then the relative percentages of the dopant and substrate\cite{pandey_structural_2021}.
+        This method takes the highest count of the amorphous hump, and the highest count of the crystalline peaks as input parameters, to take the ratio of them.
+        The following formula is used for the calculation:
+        $$m=\frac{I_a}{I_a+I_c}$$
+        $I_a$ is the highest count of the amorphous hump, $I_c$ is the highest count of the crystalline peaks, and $m$ is the mixture percent.
+
+        % With this method the program takes the maximum intensity of the amorphous hump, and the maximum intensity 
+        % of the most intense crystalline peak, and takes the ratio of them. 
+        % This ratio is then the relative percentages of the dopant and substrate\cite{pandey_structural_2021}.
 
     \subsubsection*{Method 2: Curve Fitting}
 
