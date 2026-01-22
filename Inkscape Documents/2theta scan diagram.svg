@@ -7,8 +7,8 @@
    viewBox="0 0 210 297"
    version="1.1"
    id="svg1"
-   inkscape:version="1.4.3 (0d15f75, 2025-12-25)"
    sodipodi:docname="2theta scan diagram.svg"
+   inkscape:version="1.4.3 (0d15f75, 2025-12-25)"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
@@ -24,8 +24,8 @@
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="mm"
      inkscape:zoom="2"
-     inkscape:cx="180.75"
-     inkscape:cy="416.75"
+     inkscape:cx="319.75"
+     inkscape:cy="366.75"
      inkscape:window-width="1920"
      inkscape:window-height="974"
      inkscape:window-x="-11"
@@ -131,10 +131,7 @@
        sodipodi:end="0.40491024"
        sodipodi:arc-type="slice"
        d="m -49.404332,-114.07326 a 8.7748594,8.7748594 0 0 1 -0.709555,3.45674 l -8.065305,-3.45674 z"
-       transform="scale(-1)"
-       inkscape:export-filename="2theta scan diagram.svg"
-       inkscape:export-xdpi="8.5521889"
-       inkscape:export-ydpi="8.5521889" />
+       transform="scale(-1)" />
     <path
        style="opacity:1;fill:none;fill-opacity:1;stroke:#30a63e;stroke-width:1.442;stroke-linecap:butt;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
        id="path8"
@@ -173,17 +170,17 @@
        d="m 40.771998,106.77855 18.654894,7.43034"
        id="path2" />
     <path
-       style="fill:#464646;fill-opacity:1;stroke:#b7b7b7;stroke-width:1;stroke-dasharray:none;stroke-opacity:1"
-       d="M 58.737499,114.3 H 80.168749 45.508333"
-       id="path4" />
+       style="opacity:1;fill:#000000;fill-opacity:1;stroke:#a63030;stroke-width:1;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#marker7)"
+       d="M 59.531249,114.3 66.278124,89.164582"
+       id="path6" />
     <path
        style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-dasharray:1, 3;stroke-opacity:1;stroke-dashoffset:0"
        d="m 59.266666,114.56458 41.275004,14.41979"
        id="path5" />
     <path
-       style="fill:#000000;fill-opacity:1;stroke:#a63030;stroke-width:1;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;opacity:1;marker-end:url(#marker7)"
-       d="M 59.531249,114.3 66.278124,89.164582"
-       id="path6" />
+       style="fill:#464646;fill-opacity:1;stroke:#b7b7b7;stroke-width:1;stroke-dasharray:none;stroke-opacity:1"
+       d="M 58.737499,114.3 H 80.168749 45.508333"
+       id="path4" />
     <rect
        style="fill:#e426d6;fill-opacity:1;stroke-width:0.180945;stroke-dasharray:none"
        id="rect1-2"
