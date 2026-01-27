@@ -1,5 +1,35 @@
 \chapter{Methods}
 
+    % Methods used to get the data
+    % GIXRD holds the incident angle fixed
+    % while moving the detector. Subsequent
+    % scans are done with different incident
+    % angles to probe different depths. Then by
+    % looking at the different peak heights, and
+    % breadths, one can make conclusions
+    % about the relative percentages of the
+    % material above it.
+
+    The process by which the XRD is used in this work to probe increasingly deeper depths is called grazing incidence x-ray diffraction (GIXRD; also called glancing incidence x-ray diffraction). 
+    GIXRD holds an incident angle relative to the surface of the sample (called omega ($\omega$)), while the detector on the diffracted beam side sweeps over a range of angles (figure \ref{fig:GIXRD diagram}).
+    The detector is used in 0D mode in conjunction with a parallel plate collimator; This means it simply counts all the x-rays that interact with it.
+    The counts get added to bins according to the current detector angle according to this equation: $2(\omega+\theta)$, with $\theta$ being the current detector angle.
+    After the detector has swept through all programed angles, a new scan is started with a different $\omega$ corresponding to a different depth.
+    % The XRD process used to incrementally probe deeper depths is called grazing incidence x-ray diffraction (GIXRD, also called glancing incidence x-ray diffraction). 
+    % Using this method the XRD will hold the incident beam at a fixed angle (called omega ($\omega$)), while the diffracted beam side moves from a starting angle to an end angle. 
+    % The detector is used in a 0D mode that simply counts all the x-rays that interact with it. 
+    % The angle the counts correspond to is the angle the incident beam is added to the current diffracted beam angle all multiplied by 2: $2(\omega+\theta)$. 
+    % After the scan finishes a new scan is started with a different incident angle to probe a different depth.
+
+    % Picture of GIXRD schematic
+    \begin{figure}[H]
+        \centering
+        \includesvg[width=1\columnwidth]{Pictures/2theta scan diagram.svg}
+        \caption{Diagram of XRD utilizing GIXRD}
+        \label{fig:GIXRD diagram}
+    \end{figure}
+
+    % Methods used to get percentages
     Three different methods for determining relative percentages of the dopant in the substrate are used. 
     The methods are named: 1. Intensity, 2. Curve Fitting, and 3. Summation. 
     Before discussing the intricacies of these methods, it is important to first know what shared simplifying assumptions on which they are predicated. 

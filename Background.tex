@@ -41,28 +41,11 @@
     This means that the diffractogram will be a superposition of an amorphous diffractogram on a crystalline diffractogram. 
     The silicon sample was only used to verify that the amorphous hump was present on the diffractograms.
 
-    The XRD process used to incrementally probe deeper depths is called grazing incidence x-ray diffraction (GIXRD, also called glancing incidence x-ray diffraction). 
-    Using this method the XRD will hold the incident beam at a fixed angle (called omega ($\omega$)), while the diffracted beam side moves from a starting angle to an end angle. 
-    The detector is used in a 0D mode that simply counts all the x-rays that interact with it. 
-    The angle the counts correspond to is the angle the incident beam is added to the current diffracted beam angle all multiplied by 2: $2(\omega+\theta)$. 
-    After the scan finishes a new scan is started with a different incident angle to probe a different depth.
-
-% Picture of GIXRD schematic
-\begin{figure}[H]
-    \centering
-    \includesvg[width=1\columnwidth]{Pictures/2theta scan diagram.svg}
-    \caption{Diagram of XRD using GIXRD}
-    \label{fig:GIXRD diagram}
-\end{figure}
-
-    The different incident angles probe different depths due to the different 
-    path lengths they provide the x-rays as they interact with the samples. This 
-    is due to the exponential attenuation of intensity as the beam travels given 
-    by this equation: $I(y)=I_0e^{-\alpha y}$ with $\alpha=2\omega n_I/c$\cite{https://doi.org/10.1002/jps.22202,hecht}. With 
-    the complex index of refraction ($n_I$) strongly dependent on wavelength. 
-    The x-ray source is copper, producing $K_\alpha$, and $K_\beta$ in most 
-    abundance. Since one wavelength provides the most uniformity on the diffractogram, 
-    the incident beam optics include a filter to limit the unnecessary wavelength. 
-    $K_\alpha$ is what is most common, so the $K_\beta$ gets mostly filtered out by a
-     nickel filter. This results in a x-ray beam that has a wavelength of 1.54\AA
-      \space (uniformity in the wavelength is also necessary for Bragg's law).
+    % The first paragraph in methods used to be here, so the next paragraph will need to be modified
+    The different incident angles probe different depths due to the different path lengths they provide the x-rays as they interact with the samples. 
+    This is due to the exponential attenuation of intensity as the beam travels given by this equation: $I(y)=I_0e^{-\alpha y}$ with $\alpha=2\omega n_I/c$\cite{https://doi.org/10.1002/jps.22202,hecht}. 
+    With the complex index of refraction ($n_I$) strongly dependent on wavelength. 
+    The x-ray source is copper, producing $K_\alpha$, and $K_\beta$ in most abundance. 
+    Since one wavelength provides the most uniformity on the diffractogram, the incident beam optics include a filter to limit the unnecessary wavelength. 
+    $K_\alpha$ is what is most common, so the $K_\beta$ gets mostly filtered out by a nickel filter. 
+    This results in a x-ray beam that has a wavelength of 1.54\AA (uniformity in the wavelength is also necessary for Bragg's law).
