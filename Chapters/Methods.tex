@@ -10,15 +10,15 @@
     % about the relative percentages of the
     % material above it.
 
-    The process by which the XRD is used in this work to probe increasingly deeper depths is called grazing incidence x-ray diffraction (GIXRD; also called glancing incidence x-ray diffraction). 
+    The process by which the XRD is used in this work to probe increasingly deeper depths is called grazing incidence x-ray diffraction (GIXRD; also called glancing incidence x-ray diffraction).
     GIXRD holds an incident angle relative to the surface of the sample (called omega ($\omega$)), while the detector on the diffracted beam side sweeps over a range of angles (figure \ref{fig:GIXRD diagram}).
     The detector is used in 0D mode in conjunction with a parallel plate collimator; This means it simply counts all the x-rays that interact with it.
     The counts get added to bins according to the current detector angle according to this equation: $2(\omega+\theta)$, with $\theta$ being the current detector angle.
     After the detector has swept through all programed angles, a new scan is started with a different $\omega$ corresponding to a different depth.
-    % The XRD process used to incrementally probe deeper depths is called grazing incidence x-ray diffraction (GIXRD, also called glancing incidence x-ray diffraction). 
-    % Using this method the XRD will hold the incident beam at a fixed angle (called omega ($\omega$)), while the diffracted beam side moves from a starting angle to an end angle. 
-    % The detector is used in a 0D mode that simply counts all the x-rays that interact with it. 
-    % The angle the counts correspond to is the angle the incident beam is added to the current diffracted beam angle all multiplied by 2: $2(\omega+\theta)$. 
+    % The XRD process used to incrementally probe deeper depths is called grazing incidence x-ray diffraction (GIXRD, also called glancing incidence x-ray diffraction).
+    % Using this method the XRD will hold the incident beam at a fixed angle (called omega ($\omega$)), while the diffracted beam side moves from a starting angle to an end angle.
+    % The detector is used in a 0D mode that simply counts all the x-rays that interact with it.
+    % The angle the counts correspond to is the angle the incident beam is added to the current diffracted beam angle all multiplied by 2: $2(\omega+\theta)$.
     % After the scan finishes a new scan is started with a different incident angle to probe a different depth.
 
     % Picture of GIXRD schematic
@@ -30,44 +30,44 @@
     \end{figure}
 
     % Methods used to get percentages
-    Three different methods for determining relative percentages of the dopant in the substrate are used. 
-    The methods are named: 1. Intensity, 2. Curve Fitting, and 3. Summation. 
-    Before discussing the intricacies of these methods, it is important to first know what shared simplifying assumptions on which they are predicated. 
-    The first of these assumptions is that the mixture of the probed depth is uniform. 
-    Uniformity of the mixture cannot be achieved in the sample due to the diffusion process starting at the top of the sample working its way down. %which is a known simplification of how the diffused dopants actually spread (an analysis to correct this has been tried, but better data is needed for it to be effective). 
-    The next assumption is that the intensity of the x-ray has been attenuated by 90\%. 
-    The thirdly, that the sample is put in its preferred orientation that allows for the silicon structure to be alined with the x-ray beam. 
+    Three different methods for determining relative percentages of the dopant in the substrate are used.
+    The methods are named: 1. Intensity, 2. Curve Fitting, and 3. Summation.
+    Before discussing the intricacies of these methods, it is important to first know what shared simplifying assumptions on which they are predicated.
+    The first of these assumptions is that the mixture of the probed depth is uniform.
+    Uniformity of the mixture cannot be achieved in the sample due to the diffusion process starting at the top of the sample working its way down.%which is a known simplification of how the diffused dopants actually spread (an analysis to correct this has been tried, but better data is needed for it to be effective).
+    The next assumption is that the intensity of the x-ray has been attenuated by 90\%.
+    The thirdly, that the sample is put in its preferred orientation that allows for the silicon structure to be alined with the x-ray beam.
     The last assumption is the index of refraction is the same as bulk samples\cite{COLOMBI2007554} as those values will be utilized.
 
     \subsubsection*{Method 1: Intensity}
 
         This method takes the highest count of the amorphous hump, and the highest count of the crystalline peaks as input parameters, to take the ratio of them.
-        This ratio is then the relative percentages of the dopant and substrate\cite{pandey_structural_2021}. 
+        This ratio is then the relative percentages of the dopant and substrate\cite{pandey_structural_2021}.
         The following formula is used for the calculation:
         $$m=\frac{I_a}{I_a+I_c}$$
         $I_a$ is the highest count of the amorphous hump, $I_c$ is the highest count of the crystalline peaks, and $m$ is the mixture percent.
 
         % With this method the program takes the maximum intensity of the amorphous hump, and the maximum intensity 
-        % of the most intense crystalline peak, and takes the ratio of them. 
+        % of the most intense crystalline peak, and takes the ratio of them.
         % This ratio is then the relative percentages of the dopant and substrate\cite{pandey_structural_2021}.
 
     \subsubsection*{Method 2: Curve Fitting}
 
-        The amorphous hump, and the crystalline peaks can be approximated by Gaussian curves. 
-        As such, it is possible to fit a curve to the hump, and the desired peak. 
-        With this fit, analytic integration is performed. 
-        The values from the integrations are then taken as a ratio as in the intensity method. 
+        The amorphous hump, and the crystalline peaks can be approximated by Gaussian curves.
+        As such, it is possible to fit a curve to the hump, and the desired peak.
+        With this fit, analytic integration is performed.
+        The values from the integrations are then taken as a ratio as in the intensity method.
         This method also gives a background baseline that can be subtracted out.
 
-        % This method takes the position and intensity values as the x and y inputs of scipy's curve\_fit function. 
-        % It then outputs the best fit for amplitude, mean, standard deviation, and a background value. 
+        % This method takes the position and intensity values as the x and y inputs of scipy's curve\_fit function.
+        % It then outputs the best fit for amplitude, mean, standard deviation, and a background value.
         % The function then gets integrated, and the ratio of the areas are taken.
 
     \subsubsection*{Method 3: Summation}
 
-        This method is similar to the curve fitting method, but instead of fitting the hump, and peak to a Gaussian, a numerical integration is performed. 
-        This numerical integration sums up the heights in the region of the relevant area to take their ratio. 
-        As stated, only the heights are summed; This is due to the spacing between all points being identical. 
+        This method is similar to the curve fitting method, but instead of fitting the hump, and peak to a Gaussian, a numerical integration is performed.
+        This numerical integration sums up the heights in the region of the relevant area to take their ratio.
+        As stated, only the heights are summed; This is due to the spacing between all points being identical.
         Below is the proof: 
         $$m=\frac{\sum_{\theta_i}^{\theta_f}y_adx_a}{\sum_{\theta_i}^{\theta_f}y_adx_a+\sum_{\theta_i}^{\theta_f}y_cdx_c}$$
         $$dx_a=dx_c=Constant$$
@@ -76,9 +76,9 @@
         $$m=\frac{\sum_{\theta_i}^{\theta_f}y_a}{\sum_{\theta_i}^{\theta_f}y_a+\sum_{\theta_i}^{\theta_f}y_c}$$
 
         % This is an integral method as in method 2, but instead of fitting the data to a curve the data is 
-        % integrated using discrete methods. 
-        % The dx is the same for all points, so it is ignored with the foresight that it will be divided out. 
-        % The sum is of all the intensity values for the peak or hump. 
+        % integrated using discrete methods.
+        % The dx is the same for all points, so it is ignored with the foresight that it will be divided out.
+        % The sum is of all the intensity values for the peak or hump.
         % A ratio is then taken from these sums.
 
         A similar proof can also be performed to show the counts do not need to be normalized.
