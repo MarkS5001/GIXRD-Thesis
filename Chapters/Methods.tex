@@ -13,7 +13,7 @@
     The process by which the XRD is used in this work to probe increasingly deeper depths is called grazing incidence x-ray diffraction (GIXRD; also called glancing incidence x-ray diffraction).
     GIXRD holds an incident angle relative to the surface of the sample (called omega ($\omega$)), while the detector on the diffracted beam side sweeps over a range of angles (figure \ref{fig:GIXRD diagram}).
     The detector is used in 0D mode in conjunction with a parallel plate collimator; This means it simply counts all the x-rays that interact with it.
-    The counts get added to bins according to the current detector angle according to this equation: $2(\omega+\theta)$, with $\theta$ being the current detector angle.
+    The counts get added to bins corresponding to the current detector angle according to this equation: $2(\omega+\theta)$, with $\theta$ being the current detector angle.
     After the detector has swept through all programed angles, a new scan is started with a different $\omega$ corresponding to a different depth.
     % The XRD process used to incrementally probe deeper depths is called grazing incidence x-ray diffraction (GIXRD, also called glancing incidence x-ray diffraction).
     % Using this method the XRD will hold the incident beam at a fixed angle (called omega ($\omega$)), while the diffracted beam side moves from a starting angle to an end angle.
@@ -35,9 +35,10 @@
     Before discussing the intricacies of these methods, it is important to first know what shared simplifying assumptions on which they are predicated.
     The first of these assumptions is that the mixture of the probed depth is uniform.
     Uniformity of the mixture cannot be achieved in the sample due to the diffusion process starting at the top of the sample working its way down.%which is a known simplification of how the diffused dopants actually spread (an analysis to correct this has been tried, but better data is needed for it to be effective).
+    However, this assumption is needed as the basis for future work to use as a starting point.
     The next assumption is that the intensity of the x-ray has been attenuated by 90\%.
     The thirdly, that the sample is put in its preferred orientation that allows for the silicon structure to be alined with the x-ray beam.
-    The last assumption is the index of refraction is the same as bulk samples\cite{COLOMBI2007554} as those values will be utilized.
+    The last assumption is that the index of refraction is the same as bulk samples\cite{COLOMBI2007554} as those values will be utilized.
 
     \subsubsection*{Method 1: Intensity}
 
@@ -57,7 +58,7 @@
         As such, it is possible to fit a curve to the hump, and the desired peak.
         With this fit, analytic integration is performed.
         The values from the integrations are then taken as a ratio as in the intensity method.
-        This method also gives a background baseline that can be subtracted out.
+        This method also gives a value to the background noise that can then be subtracted out.
 
         % This method takes the position and intensity values as the x and y inputs of scipy's curve\_fit function.
         % It then outputs the best fit for amplitude, mean, standard deviation, and a background value.
@@ -74,6 +75,9 @@
         $$m=\frac{dx_a\sum_{\theta_i}^{\theta_f}y_a}{dx_a\sum_{\theta_i}^{\theta_f}y_a+dx_c\sum_{\theta_i}^{\theta_f}y_c}$$
         $$m=\frac{dx_a\sum_{\theta_i}^{\theta_f}y_a}{dx_a\left(\sum_{\theta_i}^{\theta_f}y_a+\sum_{\theta_i}^{\theta_f}y_c\right)}$$
         $$m=\frac{\sum_{\theta_i}^{\theta_f}y_a}{\sum_{\theta_i}^{\theta_f}y_a+\sum_{\theta_i}^{\theta_f}y_c}$$
+        $y_a$, and $y_c$ is the count of the current $theta$ position for the amorphous and crystalline parts respectively.
+        $dx_a$, and $dx_c$ is the spacing between the $theta$ positions for the amorphous and crystalline parts respectively.
+        $m$ is the mixture amount, and $theta_f$, and $theta_i$ are the starting and ending $theta$ positions for the amorphous hump or crystalline peak respectively.
 
         % This is an integral method as in method 2, but instead of fitting the data to a curve the data is 
         % integrated using discrete methods.
