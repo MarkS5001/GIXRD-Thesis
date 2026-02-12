@@ -21,6 +21,15 @@
     % The angle the counts correspond to is the angle the incident beam is added to the current diffracted beam angle all multiplied by 2: $2(\omega+\theta)$.
     % After the scan finishes a new scan is started with a different incident angle to probe a different depth.
 
+    The different incident angles probe different depths due to the different path lengths they provide the x-rays as they interact with the samples. 
+    This is due to the exponential attenuation of intensity as the beam travels given by this equation: $I(y)=I_0e^{-\alpha y}$ with $\alpha=2\omega n_I/c$\cite{https://doi.org/10.1002/jps.22202,hecht}. 
+    With the complex index of refraction ($n_I$) strongly dependent on wavelength. 
+    The x-ray source is copper, producing $K_\alpha$, and $K_\beta$ in most abundance. 
+    Since one wavelength provides the most uniformity on the diffractogram, the incident beam optics include a filter to limit the unnecessary wavelength. 
+    $K_\alpha$ is what is most common, so the $K_\beta$ gets mostly filtered out by a nickel filter. 
+    This results in a x-ray beam that has a wavelength of 1.54\AA (uniformity in the wavelength is also necessary for Bragg's law).
+    It is these subtle differences that allow for different ratios of dopant to substrate.
+
     % Picture of GIXRD schematic
     \begin{figure}[H]
         \centering

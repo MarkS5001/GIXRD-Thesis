@@ -10,9 +10,15 @@
     Diffraction is the process of note, and the only one that will be investigated for this work. 
 
     When XRD is used on crystalline solids a diffraction pattern will emerge. 
-    The spacing between the atoms acts as the slit size that allows for the diffraction interference pattern, in accordance with Bragg's Law ($2d\sin\theta=n\lambda$). 
-    There also exist different spacings between atoms that are not nearest neighbors. 
-    Each of these different spacings are relegated into planes that act like a diffraction grating, existing for every possible repeating spacing within the atom. 
+    This diffraction pattern arises from Bragg's law:
+    $$2d\sin\theta=n\lambda$$
+    $\lambda$ is the wavelength of the light.% (Cu $k_\alpha$ of wavelength 1.54\AA is used in this work).
+    $d$ is the slit spacing, which are the interatomic spacings.
+    These interatomic spacings are also the spacings between different planes of atoms as well, instead of only nearest neighbors.
+    These planes of atoms are then relegated to act as a diffraction grating for the incident light, causing constructive and deconstructive interference with all other planes.
+    % The spacing between the atoms acts as the slit size that allows for the diffraction interference pattern, in accordance with Bragg's Law ($2d\sin\theta=n\lambda$). 
+    % There also exist different spacings between atoms that are not nearest neighbors. 
+    % Each of these different spacings are relegated into planes that act like a diffraction grating, existing for every possible repeating spacing within the atom. 
     All of these in superposition produce a graph that shows sharp peaks correlating directly to the atomic plane's spacing (shown in figure \ref{fig:pure crystalline XRD scan}).
     
 % Show picture of crystalline XRD pattern
@@ -24,7 +30,7 @@
 \end{figure}
 
     Amorphous solids under the x-ray beam behave in a similar manner. 
-    The difference being because every atom is arranged randomly, there are an infinite number of planes with their own spacing. 
+    The difference being because every atom is arranged randomly, there are an infinite number of planes all with their own spacing. 
     As shown in figure \ref{fig:pure amorphous XRD scan}, this correlates to a moderately low angle hump (called an amorphous hump) with all spacings that would correlate to higher angled peaks being nonexistent because of deconstructive interference\cite{PARKS2007277,achilles_amorphous_2018,ma18092093}.
 
 % Show picture of amorphous XRD pattern
@@ -40,12 +46,3 @@
     Silicon is a crystalline material, while phosphorous and boron are amorphous. 
     This means that the diffractogram will be a superposition of an amorphous diffractogram on a crystalline diffractogram. 
     The silicon sample was only used to verify that the amorphous hump was present on the diffractograms.
-
-    % The first paragraph in methods used to be here, so the next paragraph will need to be modified
-    The different incident angles probe different depths due to the different path lengths they provide the x-rays as they interact with the samples. 
-    This is due to the exponential attenuation of intensity as the beam travels given by this equation: $I(y)=I_0e^{-\alpha y}$ with $\alpha=2\omega n_I/c$\cite{https://doi.org/10.1002/jps.22202,hecht}. 
-    With the complex index of refraction ($n_I$) strongly dependent on wavelength. 
-    The x-ray source is copper, producing $K_\alpha$, and $K_\beta$ in most abundance. 
-    Since one wavelength provides the most uniformity on the diffractogram, the incident beam optics include a filter to limit the unnecessary wavelength. 
-    $K_\alpha$ is what is most common, so the $K_\beta$ gets mostly filtered out by a nickel filter. 
-    This results in a x-ray beam that has a wavelength of 1.54\AA (uniformity in the wavelength is also necessary for Bragg's law).
