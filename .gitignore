@@ -31,3 +31,4 @@ _minted*
 
 ## Build artifacts (Optional: remove *.pdf if you want to track it)
 # *.pdf
+.~lock.Thesis Defense Presentation.odp#
