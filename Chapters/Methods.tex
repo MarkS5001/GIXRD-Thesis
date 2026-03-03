@@ -69,7 +69,7 @@
         As such, it is possible to fit a curve to the hump, and the desired peak.
         With this fit, analytic integration is performed.
         The values from the integrations are then taken as a ratio as in the intensity method.
-        This method also gives a value to the background noise that can then be subtracted out.
+        This method also gives a value for the background noise that can then be subtracted out.
 
         % This method takes the position and intensity values as the x and y inputs of scipy's curve\_fit function.
         % It then outputs the best fit for amplitude, mean, standard deviation, and a background value.
@@ -80,7 +80,7 @@
         This method is similar to the curve fitting method, but instead of fitting the hump, and peak to a Gaussian, a numerical integration is performed.
         This numerical integration sums up the heights in the region of the relevant area to take their ratio.
         As stated, only the heights are summed; This is due to the spacing between all points being identical.
-        Below is the proof: 
+        The mixture percentage is derived as follows:
         $$m=\frac{\sum_{\theta_i}^{\theta_f}y_adx_a}{\sum_{\theta_i}^{\theta_f}y_adx_a+\sum_{\theta_i}^{\theta_f}y_cdx_c}$$
         $$dx_a=dx_c=Constant$$
         $$m=\frac{dx_a\sum_{\theta_i}^{\theta_f}y_a}{dx_a\sum_{\theta_i}^{\theta_f}y_a+dx_c\sum_{\theta_i}^{\theta_f}y_c}$$
