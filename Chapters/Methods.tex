@@ -71,6 +71,13 @@
         The values from the integrations are then taken as a ratio as in the intensity method.
         This method also gives a value for the background noise that can then be subtracted out.
 
+        \begin{figure}[H]
+            \centering
+            \includegraphics[width=\linewidth]{Pictures/All Fits (25 Smooth).png}
+            \caption{Diffractogram with relevant peaks fitted}
+            \label{fig: fitted peaks}
+        \end{figure}
+
         % This method takes the position and intensity values as the x and y inputs of scipy's curve\_fit function.
         % It then outputs the best fit for amplitude, mean, standard deviation, and a background value.
         % The function then gets integrated, and the ratio of the areas are taken.
