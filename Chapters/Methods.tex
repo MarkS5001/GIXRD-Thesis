@@ -12,7 +12,7 @@
 
     The process by which the XRD is used in this work to probe increasingly deeper depths is called grazing incidence x-ray diffraction\cite{pandey_structural_2021} (GIXRD; also called glancing incidence x-ray diffraction\cite{COLOMBI2007554}).
     GIXRD holds an incident angle relative to the surface of the sample (called omega ($\omega$)), while the detector on the diffracted beam side sweeps over a range of angles (figure \ref{fig:GIXRD diagram}).
-    The detector is used in 0D mode in conjunction with a parallel plate collimator; This means it simply counts all the x-rays that interact with it.
+    The detector is used in 0D mode in conjunction with a parallel plate collimator; this means it simply counts all the x-rays that interact with it.
     The counts get added to bins corresponding to the current detector angle according to this equation: $2(\omega+\theta)$, with $\theta$ being the current detector angle.
     After the detector has swept through all programed angles, a new scan is started with a different $\omega$ corresponding to a different depth.
     % The XRD process used to incrementally probe deeper depths is called grazing incidence x-ray diffraction (GIXRD, also called glancing incidence x-ray diffraction).
@@ -22,14 +22,14 @@
     % After the scan finishes a new scan is started with a different incident angle to probe a different depth.
 
     The different incident angles probe different depths due to the different path lengths they provide the x-rays as they interact with the samples. 
-    This is due to the exponential attenuation of intensity as the beam travels given by this equation: 
+    This is due to the exponential attenuation of intensity as the beam travels; given by this equation: 
     \begin{equation}
         I(y)=I_0e^{-\alpha y}
         \label{eq: attenuation}
     \end{equation}
     % $$I(y)=I_0e^{-\alpha y}$$
     with $\alpha=2\omega n_I/c$\cite{https://doi.org/10.1002/jps.22202,hecht}. 
-    With the complex index of refraction ($n_I$) strongly dependent on wavelength. 
+    With the complex index of refraction ($n_I$) strongly dependent on the incoming wavelength. 
     The x-ray source is copper, producing $K_\alpha$ in abundance with some $K_\beta$. 
     Since one wavelength provides the most uniformity on the diffractogram, the incident beam optics include a filter to limit the unnecessary wavelengths. 
     $K_\alpha$ is what is most common, so the $K_\beta$ gets mostly filtered out by a nickel filter. 
@@ -53,13 +53,13 @@
     % However, this assumption is needed as the basis for future work to use as a starting point.
     % The next assumption is that the intensity of the x-ray has been attenuated by 90\%.
     The next assumption is from the exponential nature of attenuation; 
-    It is that the intensity of the x-ray has been attenuated by 90\%. 
-    Then thirdly, that the sample is put in its preferred orientation that allows for the silicon structure to be alined with the x-ray beam.
+    it is that the intensity of the x-ray has been attenuated by 90\%. 
+    Then thirdly, that the sample is put in its preferred orientation that allows for the silicon structure to be aligned with the x-ray beam.
     The last assumption is that the index of refraction is the same as bulk samples\cite{COLOMBI2007554} as those values will be utilized.
 
     \subsubsection*{Method 1: Intensity}
 
-        This method takes the highest count of the amorphous hump, and the highest count of the crystalline peaks as input parameters, and calculates the ratio of them.
+        This method takes the highest intensity count from the amorphous hump, and the highest intensity count from the crystalline peaks as input parameters, and calculates the ratio of them.
         This ratio is then the relative percentages of the dopant and substrate\cite{pandey_structural_2021}.
         The following formula is used for the calculation:
         \begin{equation}
@@ -94,10 +94,10 @@
 
     \subsubsection*{Method 3: Summation}
 
-        This method is similar to the curve fitting method, but instead of fitting the hump, and peak to a Gaussian, a numerical integration is performed.
+        This method is similar to the curve fitting method, but instead of fitting the hump and peak to a Gaussian, a numerical integration is performed.
         This was implemented to compare to the curve fit method due to mismatches in some of the fits and their peaks (see figure \ref{fig: fitted peaks}). 
         This numerical integration sums up the heights in the region of the relevant area to take their ratio.
-        As stated, only the heights are summed; This is due to the spacing between all points being identical.
+        As stated, only the heights are summed; this is due to the spacing between all points being identical.
         The mixture percentage is derived as follows:
         $$m=\frac{\sum_{\theta_i}^{\theta_f}y_adx_a}{\sum_{\theta_i}^{\theta_f}y_adx_a+\sum_{\theta_i}^{\theta_f}y_cdx_c}$$
         $$dx_a=dx_c=Constant$$
@@ -110,7 +110,8 @@
         % $$m=\frac{\sum_{\theta_i}^{\theta_f}y_a}{\sum_{\theta_i}^{\theta_f}y_a+\sum_{\theta_i}^{\theta_f}y_c}$$
         Where $y_a$, and $y_c$ is the count of the current $\theta$ position for the amorphous and crystalline parts respectively.
         With $dx_a$, and $dx_c$ as the spacing between the $\theta$ positions for the amorphous and crystalline parts respectively.
-        $m$ is the mixture amount, and $\theta_f$, and $\theta_i$ are the starting and ending $\theta$ positions for the amorphous hump or crystalline peak respectively.
+        $m$ is the mixture amount, and $\theta_f$, and $\theta_i$ are the starting and ending $\theta$ positions for the amorphous hump or crystalline peak respectively. 
+        This method was developed as a comparison to the curve fit method as some fits are not ideal (as figure \ref{fig: fitted peaks} shows). 
 
         % This is an integral method as in method 2, but instead of fitting the data to a curve the data is 
         % integrated using discrete methods.
