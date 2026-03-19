@@ -3,17 +3,33 @@
     Solids can be divided into two broad types: crystalline, and amorphous. 
     Crystalline solids have repeating structures that are predictable and consistent, exhibiting long-range order in the solid (figure \ref{fig: FCC lattice}). 
     Amorphous solids have no repeating structures, and have no preferred orientation (figure \ref{fig: amorphous material}).
-    
+
     \begin{figure}[H]
         \centering
-        \includesvg[width=0.5\linewidth]{Pictures/FCC Crystal.svg}
+        \begin{tikzpicture}
+            \draw[red!70!black, fill=red!70!black] (-1.5,1.5) circle [radius=1]; % Top left circle
+            \draw[red!70!black, fill=red!70!black] (1.5,1.5) circle [radius=1]; % Top right circle
+            \draw[red!70!black, fill=red!70!black] (0,0) circle [radius=1]; % Middle circle
+            \draw[red!70!black, fill=red!70!black] (-1.5,-1.5) circle [radius=1]; % Bottom left circle
+            \draw[red!70!black, fill=red!70!black] (1.5,-1.5) circle [radius=1]; % Bottom right circle
+        \end{tikzpicture}
+        % \includesvg[width=0.5\linewidth]{Pictures/FCC Crystal.svg}
         \caption{Arrangement of atoms in a crystalline face centered cubic (FCC) lattice}
         \label{fig: FCC lattice}
     \end{figure}
 
     \begin{figure}[H]
         \centering
-        \includesvg[width=0.5\linewidth]{Pictures/Amorphous Crystal.svg}
+        \begin{tikzpicture}
+            \draw[blue!70!black, fill=blue!70!black] (-1.7,1.7) circle [radius=1];
+            \draw[blue!70!black, fill=blue!70!black] (0.9,1.5) circle [radius=1];
+            \draw[blue!70!black, fill=blue!70!black] (-0.5,0) circle [radius=1];
+            \draw[blue!70!black, fill=blue!70!black] (-1.9,-1.5) circle [radius=1];
+            \draw[blue!70!black, fill=blue!70!black] (1.6,-1.5) circle [radius=1];
+            \draw[blue!70!black, fill=blue!70!black] (-4.2,-1.3) circle [radius=1];
+            \draw[blue!70!black, fill=blue!70!black] (-3.7,.75) circle [radius=1];
+        \end{tikzpicture}
+        % \includesvg[width=0.5\linewidth]{Pictures/Amorphous Crystal.svg}
         \caption{Arrangement of atoms in an amorphous material}
         \label{fig: amorphous material}
     \end{figure}
