@@ -22,7 +22,7 @@
     % After the scan finishes a new scan is started with a different incident angle to probe a different depth.
 
     The different incident angles probe different depths due to the different path lengths they provide the x-rays as they interact with the samples. 
-    This is due to the exponential attenuation of intensity as the beam travels; given by this equation: 
+    This is due to the exponential attenuation of intensity as the beam travels; given by the equation: 
     \begin{equation}
         I(y)=I_0e^{-\alpha y}
         \label{eq: attenuation}
@@ -33,7 +33,7 @@
     The x-ray source is copper, producing $K_\alpha$ in abundance with some $K_\beta$. 
     Since one wavelength provides the most uniformity on the diffractogram, the incident beam optics include a filter to limit the unnecessary wavelengths. 
     $K_\alpha$ is what is most common, so the $K_\beta$ gets mostly filtered out by a nickel filter. 
-    This results in a x-ray beam that has a wavelength of 1.54\AA \space(uniformity in the wavelength is also necessary for Bragg's law).
+    This results in a x-ray beam that has a wavelength of 1.54\AA.
     It is these subtle differences that allow for different ratios of dopant to substrate.
 
     % Picture of GIXRD schematic
@@ -50,7 +50,7 @@
     % Methods used to get percentages
     Three different methods for determining relative percentages of the dopant in the substrate are used.
     The methods are: 1. Intensity\cite{pandey_structural_2021}, 2. Curve Fitting, and 3. Summation.
-    Before discussing the intricacies of these methods, it is important to first know what shared simplifying assumptions on which they are predicated on for this study.
+    Before discussing the intricacies of these methods, it is important to first know the shared simplifying assumptions on which they are predicated for this study.
     The first of these assumptions is that the mixture of the probed depth is uniform.
     % Uniformity of the mixture cannot be achieved in the sample due to the diffusion process starting at the top of the sample working its way down.%which is a known simplification of how the diffused dopants actually spread (an analysis to correct this has been tried, but better data is needed for it to be effective).
     % However, this assumption is needed as the basis for future work to use as a starting point.
@@ -111,9 +111,9 @@
             \label{eq: summation}
         \end{equation}
         % $$m=\frac{\sum_{\theta_i}^{\theta_f}y_a}{\sum_{\theta_i}^{\theta_f}y_a+\sum_{\theta_i}^{\theta_f}y_c}$$
-        Where $y_a$, and $y_c$ is the count of the current $\theta$ position for the amorphous and crystalline parts respectively.
+        Where $y_a$, and $y_c$ are the counts of the current $\theta$ position for the amorphous and crystalline parts respectively.
         With $dx_a$, and $dx_c$ as the spacing between the $\theta$ positions for the amorphous and crystalline parts respectively.
-        $m$ is the mixture amount, and $\theta_f$, and $\theta_i$ are the starting and ending $\theta$ positions for the amorphous hump or crystalline peak respectively. 
+        The quantity $m$ is the mixture amount, and $\theta_f$, and $\theta_i$ are the starting and ending $\theta$ positions for the amorphous hump or crystalline peak respectively. 
         This method was developed as a comparison to the curve fit method as some fits are not ideal (as figure \ref{fig: fitted peaks} shows). 
 
         % This is an integral method as in method 2, but instead of fitting the data to a curve the data is 

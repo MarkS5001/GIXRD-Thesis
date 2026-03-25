@@ -4,14 +4,14 @@
     This text file was then read by the python program (linked in appendix \ref{chap: data code}) developed to determine composition, and depth. 
     The composition was determined by the methods in the previous chapter. 
     The depth was determined by mixing the indices of refraction of the materials in the sample (phosphorous and silicon) using the composition percent as the weights. 
-    Indices of refraction where used from The Center For X-Ray Optics (\href{https://henke.lbl.gov/optical_constants/getdb2.html}{linked here})\cite{refractionIndex}. 
-    The above was the combined by using the following equation:
+    Indices of refraction were used from The Center For X-Ray Optics (\href{https://henke.lbl.gov/optical_constants/getdb2.html}{linked here})\cite{refractionIndex}. 
+    The above was combined by using the following equation:
     \begin{equation}
         n=m_a n_a+m_c n_c
         \label{eq: index mixing}
     \end{equation}
     Where $n$ is the layer's index of refraction, $n_a$ and $n_c$ are the index of refraction for phosphorous and silicon respectively.
-    $m_a$ and $m_c$ is the mixture fraction of the phosphorous and silicon respectively.
+    The quantities $m_a$ and $m_c$ are the mixture fraction of the phosphorous and silicon respectively.
 
     This new index of refraction for the layer was then converted into an attenuation coefficient by the following:
     \begin{equation}
@@ -21,7 +21,7 @@
     Where $n_I$ is the imaginary component of the layer's index of refraction, and $\lambda$ is the wavelength\cite{hecht}. 
     The inverse of the attenuation coefficient is then the skin depth of the material, or the depth at which the x-rays have attenuated by a third. 
     This skin depth was then applied until 90\% attenuation was achieved. 
-    The path length was then corrected to be depth from the surface of the material. 
+    The vertical component of the path length was then taken to be depth from the surface of the material. 
 
     Results from the methods are given in the figure below:
 

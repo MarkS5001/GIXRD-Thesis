@@ -40,12 +40,12 @@
     As the x-ray interacts with the sample it will reflect, refract, and diffract. 
     Diffraction is the process of note for XRD, and the only one that will be investigated for this work. 
     
-    The XRD that will be utilized is a PANalytical Aeris with tension set at 40kV, current at 15mA. 
+    The XRD that will be utilized is a PANalytical Aeris\cite{aeris_manual} with tension set at 40kV, current at 15mA. 
     The optics include a beta nickel filter, 0.04 soller slits, 13mm beam mask, 0.28$^\circ$ parallel plate collimator, and the detector set in 0D mode. 
     The beta nickel filter filters out unwanted wavelengths that are produced; this helps with Bragg's law (eq \ref{eq: Bragg}). 
     The soller slits control the beam width as well as the beam mask; the 13mm beam mask controls the width of the beam in order to irradiate only the sample. 
     The parallel plate collimator selects only the diffracting x-rays that correspond to the current theta angle, as well as only allowing for parallel x-rays. 
-    The 0D mode sums up all the photons that interact with it at the specific angle the detector is currently positioned at.
+    The 0D mode sums up all the photons that interact with it at the specific angle at which the detector is currently positioned.
     A variety of divergence slits were chosen depending on the incident angle as divergence slits control irradiated length. 
 
     When XRD is used on crystalline solids, a diffraction pattern will emerge. 
@@ -58,7 +58,7 @@
     Where $\lambda$ is the wavelength of the light, % (Cu $k_\alpha$ of wavelength 1.54\AA is used in this work).
     and $d$ is the slit spacing, which are the different atomic planes within the sample. %varieties of interatomic spacings.
     The planes are interatomic spacings of non-neighboring atoms as well, instead of only to the nearest neighbors.
-    These planes of atoms then act as a diffraction grating for the incident light, causing constructive and destructive interference with all other planes.
+    These planes of atoms then act as a diffraction grating for the incident light, causing constructive and destructive interference with all other planes (see figure \ref{fig: atomic plane diffraction}).
     % The spacing between the atoms acts as the slit size that allows for the diffraction interference pattern, in accordance with Bragg's Law ($2d\sin\theta=n\lambda$). 
     % There also exist different spacings between atoms that are not nearest neighbors. 
     % Each of these different spacings are relegated into planes that act like a diffraction grating, existing for every possible repeating spacing within the atom. 
@@ -73,73 +73,57 @@
         \begin{tikzpicture}
             % --- 1. Colors and Styles ---
             \definecolor{layerColor}{RGB}{140, 160, 190}
-            \definecolor{rayColor}{RGB}{140, 230, 100}
-                
-            % Ray styles
-            \tikzset{mainRay/.style={line width=2.5pt, rayColor, line cap=round}}
-            \tikzset{partialRay/.style={line width=1.5pt, rayColor, opacity=0.8, line cap=round}}
-            \tikzset{refLine/.style={dashed, gray, thin}}
-                
+            \definecolor{rayColor}{RGB}{0, 100, 0}
+
+            \tikzset{
+                mainRay/.style={line width=2.5pt, rayColor, line cap=round},
+                partialRay/.style={line width=1.5pt, rayColor, opacity=0.8, line cap=round},
+                refLine/.style={dashed, gray, thin}
+            }
+
             % --- 2. Manual Layer Placement ---
-            % Drawing 5 layers with specific height coordinates
-            \fill[layerColor] (-6, 0.0) rectangle (6, 0.3); % Bottom Layer
+            \fill[layerColor] (-6, 0.0) rectangle (6, 0.3); 
             \fill[layerColor] (-6, 1.0) rectangle (6, 1.3);
             \fill[layerColor] (-6, 2.0) rectangle (6, 2.3);
             \fill[layerColor] (-6, 3.0) rectangle (6, 3.3);
-            \fill[layerColor] (-6, 4.0) rectangle (6, 4.3); % Top Layer
-                
-            % --- 3. Defining Intersection Points ---
-            % We use a glancing angle theta = 40 degrees.
-            % The main ray hits the bottom surface (y=0.3) at (0, 0.3).
-            \coordinate (P0) at (0, 0.3);   % Bottom intersection
-            \coordinate (P1) at (-1.19, 1.3); % Intersection at 2nd layer
-            \coordinate (P2) at (-2.38, 2.3); % Intersection at 3rd layer
-            \coordinate (P3) at (-3.57, 3.3); % Intersection at 4th layer
-            \coordinate (P4) at (-4.76, 4.3); % Intersection at top layer
-                
-            % Entry and Exit boundary height
-            \def\topBoundary{5.5}
-                
+            \fill[layerColor] (-6, 4.0) rectangle (6, 4.3); % Top surface
+
+            % --- 3. Coordinates ---
+            % First contact point (Incident) on top layer (y=4.3)
+            \coordinate (P_first) at (-4.76, 4.3); 
+            % Last contact point (Reflected exit) on top layer (y=4.3)
+            \coordinate (P_last) at (4.76, 4.3);
+            % Deepest vertex
+            \coordinate (P_bottom) at (0, 0.3);
+
+            % Reference points for angles
+            \coordinate (H_left) at (-6.5, 4.3);   % Horizontal left
+            \coordinate (H_right) at (6.5, 4.3);    % Horizontal right
+            \coordinate (Inc_start) at (-6.2, 5.5); % Ray start
+            \coordinate (Ref_end) at (6.2, 5.5);    % Ray end
+
             % --- 4. Drawing the Rays ---
-                
-            % Main Incident Path (Descending)
-            \draw[mainRay] (-6.2, \topBoundary) -- (P0);
-                
-            % Main Reflected Path (Ascending from bottom)
-            \draw[mainRay] (P0) -- (6.2, \topBoundary);
-                
-            % Partial Reflections (Occurring at the incident side intersections)
-            % Each line starts exactly at the interface and stops at the top boundary.
-            \draw[partialRay] (P1) -- (3.81, \topBoundary); % Reflection from y=1.3
-            \draw[partialRay] (P2) -- (1.43, \topBoundary); % Reflection from y=2.3
-            \draw[partialRay] (P3) -- (-0.95, \topBoundary);% Reflection from y=3.3
-            \draw[partialRay] (P4) -- (-3.33, \topBoundary);% Reflection from y=4.3
-                
-            % --- 5. Angles from the Surface ---
-            % Reference dashed line on the bottom surface
-            \draw[refLine] (-1.5, 0.3) -- (1.5, 0.3);
-                
-            % Points for the angle calculation (Reflected side)
-            \coordinate (X_ref) at (1, 0.3);
-            \coordinate (Ray_pt) at (1.2, 1.307); % Point on the reflected ray path
-                
-            % Draw the glancing angle arc
-            \pic [draw, "$\theta$", angle eccentricity=1.5, angle radius=0.7cm] {angle = X_ref--P0--Ray_pt};
-                
-            % Reference for incident side
-            \coordinate (X_inc) at (-1, 0.3);
-            \pic [draw, "$\omega$", angle eccentricity=1.5, angle radius=0.7cm] {angle = P1--P0--X_inc};
+            \draw[mainRay] (Inc_start) -- (P_bottom) -- (Ref_end);
+
+            % Partial reflections (Manual coordinates)
+            \draw[partialRay] (-1.19, 1.3) -- (3.81, 5.5); 
+            \draw[partialRay] (-2.38, 2.3) -- (1.43, 5.5); 
+            \draw[partialRay] (-3.57, 3.3) -- (-0.95, 5.5);
+            \draw[partialRay] (P_first) -- (-3.33, 5.5);
+
+            % --- 5. Corrected Angle Labels ---
+            % omega: Angle between the incoming ray and the surface (left side)
+            \pic [draw, "$\omega$", angle radius=0.8cm, angle eccentricity=1.4] {angle = Inc_start--P_first--H_left};
+
+            % theta: Angle between the exiting ray and the surface (right side)
+            \pic [draw, "$\theta$", angle radius=0.8cm, angle eccentricity=1.4] {angle = H_right--P_last--Ref_end};
+
+            % Distance label 'd'
+            \draw[<->, thick] (5.5, 3.3) -- (5.5, 4.0) node[midway, right] {$d$};
         \end{tikzpicture}
         \caption{Representation of diffraction from the atomic planes}
         \label{fig: atomic plane diffraction}
     \end{figure}
-
-\begin{figure}[H]
-    \centering
-    \includesvg[width=\linewidth]{Pictures/Comparison_of_Sample_preferred_Orientation_3w.svg}
-    \caption{Comparison of preferred orientation with 45$^\circ$ and 90$^\circ$ off preferred orientation}
-    \label{fig:preferred orientation}
-\end{figure}
 
 % Show picture of crystalline XRD pattern
 \begin{figure}[H]
@@ -147,6 +131,13 @@
     \includegraphics[width=\linewidth]{Pictures/crystalline XRD scan.png}
     \caption{Diffractogram of a single crystal crystalline solid}
     \label{fig:pure crystalline XRD scan}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includesvg[width=\linewidth]{Pictures/Comparison_of_Sample_preferred_Orientation_3w.svg}
+    \caption{Comparison of preferred orientation with 45$^\circ$ and 90$^\circ$ off preferred orientation}
+    \label{fig:preferred orientation}
 \end{figure}
 
     Amorphous solids under the x-ray beam behave in a similar manner. 
@@ -162,7 +153,7 @@
 \end{figure}
 
     Doping is adding another substance (called a dopant) to a material to change electrical properties of that material. 
-    This increases the desirability of the material in future applications that it will be used in. 
+    This increases the desirability of the material in future applications in which it will be used. 
     The materials analyzed in this work are silicon doped with phosphorous, silicon doped with boron, and silicon. 
     The first two materials will be best thought of as a gradient from pure phosphorous, or boron, to pure silicon from top to bottom. 
     Silicon is a crystalline material, while phosphorous and boron are the amorphous part in the samples analyzed in this work. 
