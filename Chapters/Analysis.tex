@@ -21,7 +21,62 @@
     Where $n_I$ is the imaginary component of the layer's index of refraction, and $\lambda$ is the wavelength\cite{hecht}. 
     The inverse of the attenuation coefficient is then the skin depth of the material, or the depth at which the x-rays have attenuated by a third. 
     This skin depth was then applied until 90\% attenuation was achieved. 
-    The vertical component of the path length was then taken to be depth from the surface of the material. 
+    The vertical component of the path length was then taken to be depth from the surface of the material (as shown below in figure \ref{fig:path length to depth}). 
+
+    \begin{figure} [H]
+        \centering
+        \begin{tikzpicture}
+
+        % --- 1. Colors and Styles ---
+        \definecolor{sampleGrey}{RGB}{140, 160, 190}
+        \definecolor{rayGreen}{RGB}{0, 100, 0} 
+            
+        \tikzset{
+            sampleLayer/.style={fill=sampleGrey, draw=none},
+            incidentRay/.style={line width=2.5pt, rayGreen, line cap=round},
+            refLine/.style={dashed, gray, thin},
+            dimLine/.style={draw=black, <->, thin}
+        }
+
+        % --- 2. Manual Layer Placement (Uniform Grey) ---
+        \foreach \y in {0, 1, 2, 3, 4} {
+            \fill[sampleLayer] (-5, \y) rectangle (5, \y + 0.3);
+        }
+
+        % --- 3. Coordinates ---
+        % Surface level (top of the topmost layer)
+        \coordinate (Surface) at (0, 4.3);
+            
+        % Entry point where ray hits the surface
+        \coordinate (P_entry) at (-3.5, 4.3);
+            
+        % End point deep in the sample
+        \coordinate (P_end) at (-1, 1.3);
+
+        % Start point of the ray
+        \coordinate (Inc_start) at (-5.5, 6.5);
+
+        % Horizontal reference point to the RIGHT of the entry point
+        \coordinate (H_right) at (-1.5, 4.3);
+
+        % --- 4. Drawing Geometry ---
+        % The ray going into the sample
+        \draw[incidentRay] (Inc_start) -- (P_end);
+
+        % Vertical line from surface to the end point
+        \draw[dimLine] (-1, 4.3) -- (P_end) node[midway, right] {$y$};
+            
+        % Dashed line to show the surface plane for the angle
+        % \draw[refLine] (P_entry) -- (H_left);
+
+        % --- 5. Angle Omega (Measured the "other way") ---
+        % This measures the glancing angle toward the interior of the V
+        \pic [draw, "$\omega$", angle radius=1.2cm, angle eccentricity=1.3] {angle = Inc_start--P_entry--H_left};
+
+    \end{tikzpicture}
+    \caption{Path length to depth into the sample}
+    \label{fig:path length to depth}
+    \end{figure}
 
     Results from the methods are given in the figure below:
 
