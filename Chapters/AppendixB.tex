@@ -3,6 +3,127 @@
 The following link is where the data and code is stored online:
 
 \url{https://github.com/MarkS5001/Senior-Research-Spring-2025-/tree/main}
+
+% \begin{tikzpicture}[
+%     % Define the light green style for all blocks
+%     block/.style={
+%         rectangle, 
+%         draw=black, 
+%         thick,
+%         fill=green!30!white, % Light green color
+%         minimum width=1.5cm, 
+%         minimum height=1.5cm, 
+%         inner sep=0pt
+%     }
+% ]
+
+%     % --- Top Row ---
+%     \def\topHeight{5cm}
+%     \def\topSpacing{4cm}
+
+%     % 1. Plain block with vertical arrows
+%     \node[block] (b1) at (0, \topHeight) {};
+%     \draw[->, >=stealth, thick, blue!60!black] (b1.north) -- ++(0, 1.2cm);
+%     \draw[->, >=stealth, thick, blue!60!black] (b1.south) -- ++(0, -1.2cm);
+
+%     % 2. Line block with vertical arrows
+%     \node[block] (b2) at (\topSpacing, \topHeight) {};
+%     \begin{scope}
+%         \clip (b2.south west) rectangle (b2.north east);
+%         \foreach \i in {-0.7, -0.5, ..., 0.7} {
+%             \draw[thin, black] ($(b2.center) + (-0.8, \i)$) -- ($(b2.center) + (0.8, \i)$);
+%         }
+%     \end{scope}
+%     \draw[->, >=stealth, thick, blue!60!black] (b2.north) -- ++(0, 1.2cm);
+%     \draw[->, >=stealth, thick, blue!60!black] (b2.south) -- ++(0, -1.2cm);
+
+%     % 3. Static line block
+%     \node[block] (b3) at ({2 * \topSpacing}, \topHeight) {};
+%     \begin{scope}
+%         \clip (b3.south west) rectangle (b3.north east);
+%         \foreach \i in {-0.7, -0.5, ..., 0.7} {
+%             \draw[thin, black] ($(b3.center) + (-0.8, \i)$) -- ($(b3.center) + (0.8, \i)$);
+%         }
+%     \end{scope}
+
+%     % --- Bottom Row ---
+%     \def\botHeight{0cm}
+%     \def\botSpacing{6cm}
+
+%     % 4. Grid block with arrows
+%     \node[block, pattern=grid, pattern color=green!30!white] (b4) at (1cm, \botHeight) {};
+%     \draw[->, >=stealth, thick, blue!60!black] (b4.north) -- ++(0, 1.2cm);
+%     \draw[->, >=stealth, thick, blue!60!black] (b4.south) -- ++(0, -1.2cm);
+
+%     % 5. Static grid block
+%     \node[block, pattern=grid, pattern color=green!30!white] (b5) at ({1cm + \botSpacing}, \botHeight) {};
+
+% \end{tikzpicture}
+
+% \begin{tikzpicture}[
+%     % Define the light green style for all blocks
+%     block/.style={
+%         rectangle, 
+%         draw=black, 
+%         thick,
+%         fill=green!30!white, % The base light green
+%         minimum width=1.5cm, 
+%         minimum height=1.5cm, 
+%         inner sep=0pt
+%     },
+%     % This style forces the grid to be drawn on top of the fill
+%     gridOverlay/.style={
+%         postaction={
+%             pattern=grid, 
+%             pattern color=black
+%         }
+%     },
+%     blackArrow/.style={->, >=stealth, thick, black}
+% ]
+
+%     % --- Top Row ---
+%     \def\topHeight{5cm}
+%     \def\topSpacing{4cm}
+
+%     % 1. Plain block
+%     \node[block] (b1) at (0, \topHeight) {};
+%     \draw[blackArrow] (b1.north) -- ++(0, 1.2cm);
+%     \draw[blackArrow] (b1.south) -- ++(0, -1.2cm);
+
+%     % 2. Line block
+%     \node[block] (b2) at (\topSpacing, \topHeight) {};
+%     \begin{scope}
+%         \clip (b2.south west) rectangle (b2.north east);
+%         \foreach \i in {-0.7, -0.5, ..., 0.7} {
+%             \draw[thin, black] ($(b2.center) + (-0.8, \i)$) -- ($(b2.center) + (0.8, \i)$);
+%         }
+%     \end{scope}
+%     \draw[blackArrow] (b2.north) -- ++(0, 1.2cm);
+%     \draw[blackArrow] (b2.south) -- ++(0, -1.2cm);
+
+%     % 3. Static line block
+%     \node[block] (b3) at ({2 * \topSpacing}, \topHeight) {};
+%     \begin{scope}
+%         \clip (b3.south west) rectangle (b3.north east);
+%         \foreach \i in {-0.7, -0.5, ..., 0.7} {
+%             \draw[thin, black] ($(b3.center) + (-0.8, \i)$) -- ($(b3.center) + (0.8, \i)$);
+%         }
+%     \end{scope}
+
+%     % --- Bottom Row ---
+%     \def\botHeight{0cm}
+%     \def\botSpacing{6cm}
+
+%     % 4. Grid block (Uses gridOverlay to keep the green fill identical)
+%     \node[block, gridOverlay] (b4) at (1cm, \botHeight) {};
+%     \draw[blackArrow] (b4.north) -- ++(0, 1.2cm);
+%     \draw[blackArrow] (b4.south) -- ++(0, -1.2cm);
+
+%     % 5. Static grid block
+%     \node[block, gridOverlay] (b5) at ({1cm + \botSpacing}, \botHeight) {};
+
+% \end{tikzpicture}
+
 % \label{AppendixCode}
 % \label{app:Talk}
 
