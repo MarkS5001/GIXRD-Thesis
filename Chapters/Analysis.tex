@@ -1,6 +1,6 @@
 \chapter{Analysis} % Potentially talk about uncertainty here or in the methods chapter
 
-    After getting the diffractogram the ranges for the amorphous hump, and most intense crystalline peak where taken as input in a text file. 
+    After getting the diffractogram the ranges for the amorphous hump, and most intense crystalline peak were taken as input in a text file. 
     This text file was then read by the python program (linked in appendix \ref{chap: data code}) developed to determine composition, and depth. 
     The composition was determined by the methods in the previous chapter. 
     The depth was determined by mixing the indices of refraction of the materials in the sample (phosphorous and silicon) using the composition percent as the weights. 
@@ -19,7 +19,7 @@
         \label{eq: attenuation coefficient}
     \end{equation}
     Where $n_I$ is the imaginary component of the layer's index of refraction, and $\lambda$ is the wavelength\cite{hecht}. 
-    The inverse of the attenuation coefficient is then the skin depth of the material, or the depth at which the x-rays have attenuated by a third. 
+    The inverse of the attenuation coefficient is then the skin depth of the material, or the depth at which the x-rays have attenuated to a third of the original intensity. 
     This skin depth was then applied until 90\% attenuation was achieved. 
     The vertical component of the path length was then taken to be depth from the surface of the material (as shown below in figure \ref{fig:path length to depth}). 
 
@@ -151,7 +151,7 @@
     % \end{figure}
 
     From figure, \ref{fig:line graph amorphous with depth} we can see that the intensity method is not in agreement with the curve fit or summation methods.
-    The curve fit, and summation methods are expected to be in agreement with each other since the methods are both integral methods. 
+    The curve fit and summation methods are expected to be in agreement with each other since the methods are both integral methods. 
     It should be noted that the three methods seem to give a value greater than unity for the lowest depth, but this is an artifact of forcing the program to find data that is not there. 
     At the omega angle that corresponds to this low depth, the crystalline peaks do not appear. 
     This means only an amorphous hump is available for the data analysis. 
